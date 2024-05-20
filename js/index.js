@@ -24,15 +24,16 @@ contactMeButton[0].setAttribute('style','color:yellow'); */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const socialButtons = document.querySelectorAll('.socials .socialMediaIcon');
-    console.log(socialButtons);
+    const socialLinks  = document.querySelectorAll('.socials .socialMediaIcon');
+    console.log(socialLinks);
 
-    socialButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
+    socialLinks.forEach((link) => {
+        link.addEventListener('click', () => {
             console.log('clicked an icon')
-            btn.classList.add('scale');
+            link.classList.add('scale');
+
             setTimeout(() => {
-                btn.classList.remove('scale');
+                link.classList.remove('scale');
             }, 100);
     
         });
