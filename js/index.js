@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('scale');
             setTimeout(() => {
                 btn.classList.remove('scale');
-            }, 300);
+            }, 100);
     
         });
     });
