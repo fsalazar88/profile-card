@@ -1,0 +1,29 @@
+{
+  "name": "profile-card",
+  "version": "1.0.0",
+  "description": "<!-- Use Ctrl/Cmd + Shift + V in VS Code to preview this Markdown file. -->",
+  "main": " server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsalazar88/profile-card.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fsalazar88/profile-card/issues"
+  },
+  "homepage": "https://github.com/fsalazar88/profile-card#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
