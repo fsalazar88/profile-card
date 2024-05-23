@@ -221,3 +221,9 @@ svg {
 .modal-content h2 {
   padding-left:180px;
 }
+
+@media (max-width: 768px) {
+  .card {
+    margin-top: 100px;
+  }
+}
