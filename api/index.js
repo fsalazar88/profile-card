@@ -20,6 +20,10 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// app.use('/', (req, res) => {
+//     res.send("Server is running")
+// })
+
 app.post('/send-email', (req, res) => {
     const { name, email, message } = req.body;
 
@@ -67,6 +71,8 @@ app.post('/send-email', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
+
+module.exports = app;
 
 
 
