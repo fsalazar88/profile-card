@@ -8,7 +8,8 @@ const app = express();
 const PORT = 3000;
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://fsalazar88.github.io'); // Replace with your front-end origin
+    res.setHeader('Access-Control-Allow-Origin', 'https://fsalazar88.github.io'); 
+    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5500'); // Replace with your front-end origin
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();

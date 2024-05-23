@@ -2,26 +2,6 @@
 // You may ignore this file and delete if if JavaScript is not required for your challenge.
 
 
-/* //Not recommended as you can overwrite other style
-let contactMeButton = document.getElementsByClassName("contact");
-contactMeButton[0].setAttribute('style','color:yellow'); */
-
-// document.addEventListener('DOMContentLoaded', () => {
-
-//     const socialButtons = document.querySelector('.socialMediaIcon');
-//     console.log(socialButtons);
-
-//     document.addEventListener('click', () => {
-//         console.log('clicked an icon')
-//         socialButtons.classList.add('scale');
-//         setTimeout(() => {
-//             socialButtons.classList.remove('scale');
-//         }, 300);
-
-//     });
-// });
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const socialLinks  = document.querySelectorAll('.socials .socialMediaIcon');
@@ -36,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const openModalBtn = document.getElementsByClassName("contact")[0]; // Updated ID
+    const openModalBtn = document.getElementsByClassName("contact")[0];
     const modal = document.getElementById('modal');
     const closeBtn = document.querySelector('.close-btn');
     const contactForm = document.getElementById('contact-form');
@@ -120,9 +100,3 @@ document.addEventListener('DOMContentLoaded', () => {
         button.disabled = false;
     }
 });
-
-// let contactMeButton = document.getElementById('contactButton');
-
-// contactMeButton.addEventListener('click', () => {
-//     console.log('clicked button')
-// })
