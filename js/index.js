@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function sendMessage(data){
         try{
-            const response = await fetch("http://localhost:3000/send-email", {
+            const response = await fetch("https://profile-card-ten-ecru.vercel.app/send-email", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
