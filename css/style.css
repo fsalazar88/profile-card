@@ -219,11 +219,17 @@ svg {
 }
 
 .modal-content h2 {
-  padding-left:180px;
+  display: inline;
+  padding-left: calc(100%/2 - 101.6px/2);
 }
 
 @media (max-width: 768px) {
   .card {
     margin-top: 100px;
+  }
+
+  #modal {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
