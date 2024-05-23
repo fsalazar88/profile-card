@@ -7,7 +7,6 @@ body {
     sans-serif;
   min-height: 100vh;
   background: linear-gradient(to left top, #D2D6DB, #F9FAFB);  
-  padding-top: 200px;
   display: flex;
   justify-content: center;
 }
@@ -27,6 +26,7 @@ body {
 }
 
 .card {
+  margin-top: 200px;
   display: flex;
   width: 340px;
   flex-direction: column;
