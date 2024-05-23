@@ -24,15 +24,58 @@ document.addEventListener('DOMContentLoaded', () => {
     let sendersName = document.getElementById('name');
     let sendersEmail = document.getElementById('email');
     let sendersMessage = document.getElementById('message');
+    const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+    let focusableElements = [];
+    let firstFocusableElement;
+    let lastFocusableElement;
+
+    function updateFocusableElements() {
+        focusableElements = modal.querySelectorAll(focusableElementsString);
+        firstFocusableElement = focusableElements[0];
+        lastFocusableElement = focusableElements[focusableElements.length - 1];
+    }
+
+    function setTabindex(value){
+        focusableElements.forEach(element => element.setAttribute('tabindex', value))
+    }
 
     openModalBtn.addEventListener('click', () => {
         modal.classList.add('active');
+        updateFocusableElements();
+        setTabindex('0');
+        firstFocusableElement.focus();
     });
 
     closeBtn.addEventListener('click', () => {
         clearFormFields();
         modal.classList.remove('active');
+        setTabindex('-1');
+        openModalBtn.focus();
     });   
+
+    document.addEventListener('keydown', (e) => {
+        if (modal.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                closeBtn.click();
+            } else if (e.key === 'Tab') {
+                if (e.shiftKey) { // Shift + Tab
+                    if (document.activeElement === firstFocusableElement) {
+                        e.preventDefault();
+                        lastFocusableElement.focus();
+                    }
+                } else { // Tab
+                    if (document.activeElement === lastFocusableElement) {
+                        e.preventDefault();
+                        firstFocusableElement.focus();
+                    }
+                }
+            }
+        }
+    });
+
+    // Initial call to set tabindex to -1
+    updateFocusableElements();
+    setTabindex('-1');
 
     contactForm.addEventListener('submit', async (event) => {
 
