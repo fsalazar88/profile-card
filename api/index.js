@@ -1,37 +1,50 @@
+// Import required modules
 const express = require('express');
 const nodeMailer = require('nodemailer');
-require('dotenv').config(); // Import environment variables
-// const http = require('http');
+require('dotenv').config(); // Load environment variables from .env file
 
+// Initialize express app
 const app = express();
-// const server = http.createServer(app);
 const PORT = 3000;
 
+/**
+ * Middleware to set headers for CORS (Cross-Origin Resource Sharing)
+ * Allows requests from specified origin
+ */
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://fsalazar88.github.io'); 
-    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5500'); // Replace with your front-end origin
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Origin', 'https://fsalazar88.github.io'); // Replace with your front-end origin if different
+    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5500'); // Uncomment for local development
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST'); // Allow GET and POST methods
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Allow specific headers
     next();
 });
 
 /**
- * handle parsing request body
+ * Middleware to parse JSON and URL-encoded request bodies
  */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.use('/', (req, res) => {
-//     res.send("Server is running")
-// })
+/**
+ * GET endpoint to check server status
+ * Responds with a simple message indicating the server is running
+ */
+app.get('/', (req, res) => {
+    res.send("Server is running")
+})
 
-app.post('/send-email', (req, res) => {
+/**
+ * POST endpoint to handle email sending
+ * Expects 'name', 'email', and 'message' in the request body
+ */
+app.post('/send-email', async (req, res) => {
     const { name, email, message } = req.body;
 
+    // Create a transporter object using the default SMTP transport
     let transporter = nodeMailer.createTransport({
-        host: 'smtp.gmail.com', // Replace with your provider's hostname if different
-        port: 465,
-        secure: true,
+        host: 'smtp.gmail.com', // SMTP server hostname (e.g., Gmail)
+        port: 465, // SMTP port
+        secure: true, // Use SSL
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS,
@@ -45,35 +58,19 @@ app.post('/send-email', (req, res) => {
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error)
-            res.status(500).json({ error: 'Failed to send email', details: error.toString() });
-        } else {
-            console.log('Email sent: ' + info.response)
-            res.status(200).json('Email sent: ' + info.response);
-        }
-    });
-
-    // async function send() {
-    //     try{
-    //         let info = await transporter.sendMail(mailOptions);
-    //         console.log('Email sent: ' + info.response)
-    //         res.status(200).json('Email sent: ' + info.response);
-    //     } catch (error) {
-    //             console.log("Error sending email: " + error)
-    //             res.status(500).json({ error: 'Failed to send email', details: error.toString() });
-    //     } 
-    // }
-    // send();
+    try{
+        // Send mail with defined transport object
+        let info = await transporter.sendMail(mailOptions);
+        console.log('Email sent:' + info.response);
+        res.status(200).json('Email sent successfully: ' + info.response);
+    } catch (error) {
+        console.log("Error sending email: " + error)
+        res.status(500).json({ error: 'Failed to send email', details: error.toString() });
+    } 
 });
-
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
 
 module.exports = app;
-
-
-
