@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function openModal() {
         toggleSocialMediaIconPosition();
+        toggleOverflow();
         modal.classList.add('active');
         updateFocusableElements();
         setTabindex('0');
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function closeModal() {
         clearFormFields();
+        toggleOverflow();
         modal.classList.remove('active');
         toggleSocialMediaIconPosition();
         setTabindex('-1');
@@ -213,8 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-   * Toggles 'no-position' CSS class on all social media links to manipulate their position property.
-   */
+     * Toggles 'no-position' CSS class on all social media links to manipulate their position property.
+     */
     function toggleSocialMediaIconPosition (){
         socialLinks.forEach((link) => {
             let hasNoPositionClass = link.classList.contains("no-position");
@@ -226,5 +228,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add("no-position");
             }
         })
+    }
+
+    /**
+     * Toggles 'no-scroll' CSS class on document body to manipulate its overflow property.
+     */
+    function toggleOverflow (){
+        
+        let body = document.querySelector('body')
+        body.classList.toggle("no-overflow")
     }
 });
