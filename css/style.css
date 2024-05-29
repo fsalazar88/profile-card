@@ -136,11 +136,23 @@ svg {
 .socialMediaIcon {
   border-radius: 4px;
   transition: transform 0.3s;
+  /**/
+  position: relative; /* Needed to position the tooltip */
+  cursor: pointer;
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+}
+
+.no-position {
+  position: static;
 }
 
 /* Change the background color on hover */
 .socialMediaIcon:hover {
   background-color: #ebe7ff;
+  /**/
+  color: #555;
 }
 
 /* Change the background color and outline on focus for accessibility */
@@ -153,6 +165,47 @@ svg {
 .socialMediaIcon.scale {
   transform: scale(1.2);
 }
+
+/* Tooltip styling */
+.socialMediaIcon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 125%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Tooltip arrow */
+.socialMediaIcon::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Show tooltip on hover */
+.socialMediaIcon:hover::after,
+.socialMediaIcon:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 /* Container */
 

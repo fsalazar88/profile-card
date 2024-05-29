@@ -69,6 +69,9 @@ app.post('/send-email', async (req, res) => {
     } 
 });
 
+/**
+ * Start the express server and listen on the specified port
+ */
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
