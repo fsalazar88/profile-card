@@ -136,7 +136,6 @@ svg {
 .socialMediaIcon {
   border-radius: 4px;
   transition: transform 0.3s;
-  /**/
   position: relative; /* Needed to position the tooltip */
   cursor: pointer;
   display: inline-block;
@@ -151,7 +150,6 @@ svg {
 /* Change the background color on hover */
 .socialMediaIcon:hover {
   background-color: #ebe7ff;
-  /**/
   color: #555;
 }
 
