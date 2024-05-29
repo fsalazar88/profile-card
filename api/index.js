@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 })
 
 /**
- * POST endpoint to handle email sending
+ * POST endpoint to handle email sending to a specified gmail account
  * Expects 'name', 'email', and 'message' in the request body
  */
 app.post('/send-email', async (req, res) => {
