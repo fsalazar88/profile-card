@@ -1,4 +1,4 @@
-# Simple and Customizable Profile Card
+# Intuitive and Customizable Profile Card
 
 A simple and responsive personal profile card with a modal contact form. This project showcases a modern, clean design using HTML, CSS, and JavaScript, with a focus on accessibility and responsive design. Additionally, it includes an Express backend for handling form submissions via email using Nodemailer.
 
