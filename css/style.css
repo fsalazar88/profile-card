@@ -81,7 +81,7 @@ body {
   margin-top: 16px;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
 }
 
@@ -90,7 +90,10 @@ body {
 /* Style the contact button with a background color and transition effects */
 .contact {
   border-radius: 4px;
-  background-color: #4338CA;
+  /* background-color: #4338CA; */
+  background-color: #075b73;
+  /* background-color: #12677f; */
+
   color: white;
   width: 100%;
   padding: 10px 0px;
@@ -99,7 +102,9 @@ body {
 
 /* Change the background color on hover */
 .contact:hover {
-  background-color: #3730A3;
+  /* background-color: #3730A3; */
+  /* filter: brightness(80%); */
+  background-color: color-mix(in srgb, #075b73 90%, white);
 }
 
 /* Scale the button slightly on click */
@@ -109,7 +114,8 @@ body {
 
 /* Style the button outline for accessibility */
 .contact:focus-visible {
-  outline: 4px solid #ebe7ff;
+  /* outline: 4px solid #ebe7ff; */
+  outline: 4px solid color-mix(in srgb, #075b73 15%, white);
 }
 
 /* Style the disabled state of the button */
@@ -132,6 +138,8 @@ svg {
   width: 20px;
   margin: 8px;
   color: #4338CA;
+  color: #075b73;
+  /* color: #12677f; */
 }
 
 /* Social Media Icon Hover and Focus Effects */
@@ -153,14 +161,16 @@ svg {
 
 /* Change the background color on hover */
 .socialMediaIcon:hover {
-  background-color: #ebe7ff;
+  /* background-color: #ebe7ff; */
+  background-color: color-mix(in srgb, #075b73 10%, white);
   color: #555;
 }
 
-/* Change the background color and outline on focus for accessibility */
+/* Change the background color and outline on focus for accessibility */  
 .socialMediaIcon:focus-visible {
   background-color: #FAFAFA;
-  outline: 4px solid #ebe7ff;
+  /* outline: 4px solid #ebe7ff; */
+  outline: 4px solid color-mix(in srgb, #075b73 15%, white);
 }
 
 /* Scale the icon on click */
@@ -310,7 +320,8 @@ svg {
   width: 100px;
   margin: auto;
   border-radius: 4px;
-  background-color: #4338CA;
+  /* background-color: #4338CA; */
+  background-color: #075b73;
   color: white;
   padding: 5px 0px;
   transition: transform 0.3s;
@@ -318,17 +329,19 @@ svg {
 
 /* Change the submit button background color on hover */
 #contact-form button:hover {
-  background-color: #3730A3;
+  /* background-color: #3730A3; */
+  background-color: color-mix(in srgb, #075b73 90%, white);
 }
 
 /* Scale the submit button slightly on click */
 #contact-form button:active {
   transform: scale(1.05);
-}
+}   
 
 /* Style the submit button outline for accessibility */
 #contact-form button:focus-visible {
-  outline: 4px solid #ebe7ff;
+  /* outline: 4px solid #ebe7ff; */
+  outline: 4px solid color-mix(in srgb, #075b73 15%, white);
 }
 
 /* Style the disabled state of the submit button */
