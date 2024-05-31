@@ -22,6 +22,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ------------------------------------------------------------------------
+    // Email Icon Functionality
+    // ------------------------------------------------------------------------
+
+    const emailIcon = document.querySelector('#emailIcon');
+
+    /**
+     * Copies email to user's clipboard when email icon is clicked.
+     */
+    async function handleEmailIconClick () {
+        const emailAddress = 'fabianxsalazar@gmail.com';
+        try{
+            await navigator.clipboard.writeText(emailAddress);            
+            
+            // Change tooltip text to notify user that email has been copied
+            emailIcon.setAttribute('data-tooltip', 'Email copied to clipboard');
+
+            // Reset tooltip text to "Copy Email after 2 seconds"
+            setTimeout(() => {
+                emailIcon.setAttribute('data-tooltip', 'Copy Email');
+            }, 2000)
+
+        } catch (error) {
+            console.log(`Failed to copy email: ${error}`);
+        }
+    }
+    
+    emailIcon.addEventListener('click', handleEmailIconClick);
+
+    // ------------------------------------------------------------------------
     // Modal Functionality
     // ------------------------------------------------------------------------
     
