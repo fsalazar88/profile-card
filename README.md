@@ -22,6 +22,9 @@ This profile card was adapted from the following challenge: "[GreatFrontEnd Proj
 
 This project is a static web page that features a personal profile card with an image, bio, and social media icons. It includes a contact button that opens a modal with a contact form. The design is responsive and adapts to different screen sizes. An Express backend handles the contact form submissions, sending the form data to a specified email address using Nodemailer.
 
+
+![alt text](<Recording 2024-05-31 at 10.33.25 PM.gif>)
+
 ## Features
 
 - **Responsive Design**: The layout adjusts seamlessly to different screen sizes, ensuring a good user experience on both desktop and mobile devices.
