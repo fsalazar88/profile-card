@@ -284,6 +284,10 @@ svg {
   border: 1px solid gray;
 }
 
+.modal-content textarea {
+  min-height: 150px;
+}
+
 /* Close Button */
 
 /* Position the close button at the top-right of the modal */
