@@ -1,11 +1,23 @@
 // Import required modules
 const express = require('express');
 const nodeMailer = require('nodemailer');
+const rateLimit = require('express-rate-limit');
 require('dotenv').config(); // Load environment variables from .env file
 
 // Initialize express app
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
+// Rate limiting middleware
+const limiter = rateLimit({
+    windowMs: 5 * 60 * 1000,
+    max: 20,
+    message: 'Too many requests from this IP, please try again after 5 minutes',
+    headers: true,
+});
+
+// Apply the rate limiting middleware to all requests
+app.use(limiter);
 
 /**
  * Middleware to set headers for CORS (Cross-Origin Resource Sharing)
