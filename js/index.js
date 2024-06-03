@@ -213,7 +213,10 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     async function sendMessage(data) {
         try {
-            const response = await fetch("https://profile-card-ten-ecru.vercel.app/send-email", {
+            const isProduction = window.location.hostname === 'fsalazar88.github.io';
+            const apiUrl = isProduction ? 'https://profile-card-ten-ecru.vercel.app' : 'http://localhost:3000'; // Dynamically set API URL based on the environment
+
+            const response = await fetch(`${apiUrl}/send-email`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",

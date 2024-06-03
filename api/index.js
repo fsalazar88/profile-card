@@ -5,15 +5,14 @@ require('dotenv').config(); // Load environment variables from .env file
 
 // Initialize express app
 const app = express();
-
 const PORT = 3000;
-console.log(`process.env.NODE_ENV==='development' : ${process.env.NODE_ENV==='development'}`)
+
 /**
  * Middleware to set headers for CORS (Cross-Origin Resource Sharing)
  * Allows requests from specified origin
  */
 app.use((req, res, next) => {    
-    res.setHeader('Access-Control-Allow-Origin', process.env.NODE_ENV==='development' ? 'http://localhost:5500' : 'https://fsalazar88.github.io'); // Uncomment for local development
+    res.setHeader('Access-Control-Allow-Origin', process.env.NODE_ENV==='development' ? 'http://localhost:5500' : 'https://fsalazar88.github.io'); // Dynamically set CORS headers based on the environment
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST'); // Allow GET and POST methods
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Allow specific headers
     next();
