@@ -373,3 +373,9 @@ svg {
     padding-right: 16px;
   }
 }
+
+@media (max-height: 900px) {
+  .card {
+    margin-top: 100px;
+  }
+}
