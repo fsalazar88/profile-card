@@ -24,9 +24,11 @@ This project is a static web page that features a personal profile card with an 
 <br/>
 <table style="border-collapse: collapse; border: none; width: 100%;">
   <tr style="border: none;">
+    <td style="border: none; width: 33%;"></td>
     <td style="border: none; text-align: center;">
       <img src="img/Recording 2024-06-03 at 8.13.28 PM.gif" width="500">
     </td>
+    <td style="border: none; width: 33%;"></td>
   </tr>
 </table>
 
@@ -51,9 +53,11 @@ This project is a static web page that features a personal profile card with an 
   <br/>
   <table style="border-collapse: collapse; border: none; width: 100%;">
     <tr style="border: none;">
+      <td style="border: none; width: 33%;"></td>
       <td style="border: none; text-align: center;">
         <img src="img/Recording 2024-06-04 at 10.46.11 AM.gif" width="400" style="display: block; margin: 0 auto;">
       </td>
+      <td style="border: none; width: 33%;"></td>
     </tr>
   </table>  
 - **Express Backend**: Handles contact form submissions and sends the data via email using Nodemailer.
