@@ -25,7 +25,7 @@ This project is a static web page that features a personal profile card with an 
 <table style="border-collapse: collapse; border: none; width: 100%;">
   <tr style="border: none;">
     <td style="border: none; width: 33%;"></td>
-    <td style="border: none; text-align: center;">
+    <td style="border: none; text-align: center; margin: 0 100px">
       <img src="img/Recording 2024-06-03 at 8.13.28 PM.gif" width="500">
     </td>
     <td style="border: none; width: 33%;"></td>
