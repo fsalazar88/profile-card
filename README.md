@@ -22,15 +22,15 @@ This profile card was adapted from the following challenge: "[GreatFrontEnd Proj
 
 This project is a static web page that features a personal profile card with an image, bio, and social media icons. It includes a contact button that opens a modal with a contact form. The design is responsive and adapts to different screen sizes. An Express backend handles the contact form submissions, sending the form data to a specified email address using Nodemailer.  
 <br/>
-<img src="img/Recording 2024-06-03 at 8.13.28 PM.gif" width="500">
+<img src="img/Recording 2024-06-03 at 8.13.28 PM.gif" width="500" style="display: block; margin: 0 auto">
 
 ## Features
 
 - **Responsive Design**: The layout adjusts seamlessly to different screen sizes, ensuring a good user experience on both desktop and mobile devices.
 - **Profile Card**: Displays a profile picture, bio, and social media icons.
-- **Contact Form**: Includes a modal contact form with accessible features and smooth transitions. <br/><img src="img/Screenshot 2024-05-31 223044.png" width="300">
+- **Contact Form**: Includes a modal contact form with accessible features and smooth transitions. <br/><br/><img src="img/Screenshot 2024-05-31 223044.png" width="300" style="display: block; margin: 0 auto"> <br/>
 - **Accessibility**: Focus on accessible design with proper color contrast, focus states, and screen reader-friendly elements.
-- **Tooltips**: Social media icons include tooltips for better user interaction. The links send you to the developer's GitHub profile, LinkedIn profile, Calendly to schedule a time to speak, and the ability to copy the developer's email address. <br/><img src="img/Recording 2024-06-03 at 7.58.07 PM.gif" width="300">
+- **Tooltips**: Social media icons include tooltips for better user interaction. The links send you to the developer's GitHub profile, LinkedIn profile, Calendly to schedule a time to speak, and the ability to copy the developer's email address. <br/><br/><img src="img/Recording 2024-06-03 at 7.58.07 PM.gif" width="300" style="display: block; margin: 0 auto"> <br/>
 - **Express Backend**: Handles contact form submissions and sends the data via email using Nodemailer.
 
 ## Technologies Used
