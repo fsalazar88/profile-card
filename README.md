@@ -30,9 +30,9 @@ This project is a static web page that features a personal profile card with an 
 
 - **Responsive Design**: The layout adjusts seamlessly to different screen sizes, ensuring a good user experience on both desktop and mobile devices.
 - **Profile Card**: Displays a profile picture, bio, and social media icons.
-- **Contact Form**: Includes a modal contact form with accessible features and smooth transitions. <br/><br/><div style="text-align: center;"><img src="img/Screenshot 2024-05-31 223044.png" width="300" style="display: block; margin: 0 auto"></div><br/>
+- **Contact Form**: Includes a modal contact form with accessible features and smooth transitions. <br/><br/><div style="text-align: center;"><img src="img/Screenshot 2024-05-31 223044.png" width="400" style="display: block; margin: 0 auto"></div><br/>
 - **Accessibility**: Focus on accessible design with proper color contrast, focus states, and screen reader-friendly elements.
-- **Tooltips**: Social media icons include tooltips for better user interaction. The links send you to the developer's GitHub profile, LinkedIn profile, Calendly to schedule a time to speak, and the ability to copy the developer's email address. <br/><br/><div style="text-align: center;"><img src="img/Recording 2024-06-03 at 7.58.07 PM.gif" width="300" style="display: block; margin: 0 auto"></div> <br/>
+- **Tooltips**: Social media icons include tooltips for better user interaction. The links send you to the developer's GitHub profile, LinkedIn profile, Calendly to schedule a time to speak, and the ability to copy the developer's email address. <br/><br/><div style="text-align: center;"><img src="img/Recording 2024-06-04 at 10.46.11 AM.gif" width="400" style="display: block; margin: 0 auto"></div> <br/>
 - **Express Backend**: Handles contact form submissions and sends the data via email using Nodemailer.
 
 ## Technologies Used
