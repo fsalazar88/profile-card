@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 // Rate limiting middleware
 const limiter = rateLimit({
     windowMs: 5 * 60 * 1000,
-    max: 20,
+    max: 20, // Limit to 20 requests per IP address
     message: 'Too many requests from this IP, please try again after 5 minutes',
     headers: true,
 });
