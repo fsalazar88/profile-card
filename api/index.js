@@ -19,6 +19,7 @@ const limiter = rateLimit({
 // Apply the rate limiting middleware to all requests
 app.use(limiter);
 
+
 /**
  * Middleware to set headers for CORS (Cross-Origin Resource Sharing)
  * Allows requests from specified origin
