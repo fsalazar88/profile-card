@@ -16,8 +16,6 @@ const limiter = rateLimit({
     headers: true,
 });
 
-
-
 // Apply the rate limiting middleware to all requests
 app.use(limiter);
 
