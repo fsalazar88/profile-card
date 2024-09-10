@@ -6,6 +6,7 @@
  *   - Contact form submission and error handling
  */
 
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // ------------------------------------------------------------------------
